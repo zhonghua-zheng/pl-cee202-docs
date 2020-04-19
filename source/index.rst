@@ -17,7 +17,7 @@ This website provides the information about how to set up and use
    :glob:
 
    page/setup.md
-   page/
+   page/R_no_coding.md
 
 
 How to ask for help
