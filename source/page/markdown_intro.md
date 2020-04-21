@@ -11,7 +11,7 @@
 
 ## How to write?
 
-**\*Important: `Heading 1` ** of your markdown file (**not your markdown file name**) will be the section name showing on the webpage.
+**Important: `Heading 1`** of your markdown file (**not your markdown file name**) will be the section name showing on the webpage.
 
 To create a markdown-based documentation:
 

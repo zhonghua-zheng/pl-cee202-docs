@@ -17,6 +17,8 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: Students
+
+   page/student_test_page.md
    
 
 .. toctree::
