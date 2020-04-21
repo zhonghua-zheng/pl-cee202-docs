@@ -11,13 +11,24 @@ This website provides the information about how to set up and use
 
 `PrairieLearn <https://prairielearn.readthedocs.io/en/latest/>`_ is an online problem-driven learning system for creating homeworks and tests. 
 
+
+Contents
+--------
+
 .. toctree::
    :maxdepth: 2
-   :caption: Overview
-   :glob:
+   :caption: Instructors/TAs
 
    page/setup.md
    page/R_no_coding.md
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Website Developers
+
+   page/markdown_intro.md
+   page/maintain_site.md
 
 
 How to ask for help

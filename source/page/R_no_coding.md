@@ -14,13 +14,13 @@ Note: Each UUID will be assigned to a question only.
 
 ## Step 1: Copy a R question
 
-- [ ] Follow the Step 1 to Step 4 in the **[Routine work](https://pl-cee202-docs.readthedocs.io/en/latest/page/setup.html#routine-work)**. Then click **PrarieLearn** logo (next to **Admin**) in the upper left.
-- [ ] Click a course such as **`CEE 202: Engineering Risk & Uncertainty`** in the `Courses` (not `Course instances`) list.
-- [ ] Click the `Questions` (next to `Issues`) on the top line.
-- [ ] Find a question you want to copy (for example: `AS4_Prob5_2020_AngTang`).
-- [ ] Click `Settings` between `Preview` and `Statistics`.
-- [ ] Click `Make a copy of this question`
-- [ ] Click `Change QID`
+1. Follow the Step 1 to Step 4 in the **[Routine work](https://pl-cee202-docs.readthedocs.io/en/latest/page/setup.html#routine-work)**. Then click **PrarieLearn** logo (next to **Admin**) in the upper left.
+2. Click a course such as **`CEE 202: Engineering Risk & Uncertainty`** in the `Courses` (not `Course instances`) list.
+3. Click the `Questions` (next to `Issues`) on the top line.
+4. Find a question you want to copy (for example: `AS4_Prob5_2020_AngTang`).
+5. Click `Settings` between `Preview` and `Statistics`.
+6. Click `Make a copy of this question`
+7. Click `Change QID`
 
 ## Step 2: Modify the questions
 
@@ -38,12 +38,12 @@ Note: Each question folder contain the following files
 
 ### info.json
 
-- [ ] Click `Edit` under `Settings`
-- [ ] Define the `title`, `topic`, `tags`, and `type`
+1. Click `Edit` under `Settings`
+2. Define the `title`, `topic`, `tags`, and `type`
 
 ### server.py
 
-- [ ] Click `Files` (under `PrairieLearn` in the upper left) &rightarrow; `Edit` the `server.py`, then you need to finish the following tasks:
+1. Click `Files` (under `PrairieLearn` in the upper left) &rightarrow; `Edit` the `server.py`, then you need to finish the following tasks:
 
 ```python
 import rpy2.robjects as robjects
@@ -76,17 +76,17 @@ def generate(data):
     data["params"]["image"] = image_name
 ```
 
-- [ ] Change the randomized variable using `a_r=sample(seq(start,end,interval),1)`
+2. Change the randomized variable using `a_r=sample(seq(start,end,interval),1)`
 
-- [ ] Change the answers (`ans_a_r`, `ans_b_r`, ...), and export  (`list(...)`)
+3. Change the answers (`ans_a_r`, `ans_b_r`, ...), and export  (`list(...)`)
 
-  Note: `a` corresponds to `${{params.a}}$`, `answer_a` corresponds to `answers-name="answer_a"` in the `question.html`
+Note: `a` corresponds to `${{params.a}}$`, `answer_a` corresponds to `answers-name="answer_a"` in the `question.html`
 
-- [ ] Change the `image_name`
+4. Change the `image_name`
 
 ### question.html
 
-- [ ] Click `Files` (under `PrairieLearn` in the upper left) &rightarrow; `Edit` the `question.html`, then you need to finish the following tasks:
+1. Click `Files` (under `PrairieLearn` in the upper left) &rightarrow; `Edit` the `question.html`, then you need to finish the following tasks:
 
 ```html
 <pl-question-panel>
@@ -113,24 +113,28 @@ def generate(data):
 </div>
 ```
 
-- [ ] Replace "This is the problem statement." with your **problem statement**
-- [ ] Replace `${{params.a}}$` with your randomized variable from `server.py` 
-- [ ] Replace `"answer_a"` with your answer from `server.py`
-- [ ] Define the tolerance. Sotiria suggests for the answer (0.XX), you need to have `comparison="relabs" rtol="0.01" atol="0.01"`
+2. Replace "This is the problem statement." with your **problem statement**
+
+3. Replace `${{params.a}}$` with your randomized variable from `server.py` 
+
+4. Replace `"answer_a"` with your answer from `server.py`
+
+5. Define the tolerance. Sotiria suggests for the answer (0.XX), you need to have `comparison="relabs" rtol="0.01" atol="0.01"`
 
 ## Step 3: Test your questions
 
-- [ ] Click `Preview` to test
-- [ ] Click `New variant` to have another test
+1. Click `Preview` to test
+
+2. Click `New variant` to have another test
 
 ## Step 4: Commit and push the changes
 
-- [ ] Using Git to commit and push the changes
+- Using Git to commit and push the changes
 
 Note: You may do this after you finish all the questions
 
 ## Step 5: Sync and test 
 
-- [ ] Log in the website https://prairielearn.engr.illinois.edu/pl/, and select your course
-- [ ] Click `Sync`, then `Pull from remote git repository`
-- [ ] Find your questions by clicking `Questions` and test them again
+1. Log in the website https://prairielearn.engr.illinois.edu/pl/, and select your course
+2. Click `Sync`, then `Pull from remote git repository`
+3. Find your questions by clicking `Questions` and test them again
