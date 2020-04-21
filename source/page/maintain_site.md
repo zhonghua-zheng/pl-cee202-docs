@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- Clone the GitHub from https://github.com/zzheng93/pl-cee202-docs
+- Clone the GitHub from `https://github.com/zzheng93/pl-cee202-docs`
 - Have the markdown file `*.md` ready. This file will be a page for this website
 
 ## Step 1: Include your markdown file
@@ -38,17 +38,16 @@ Contents
 
    page/markdown_intro.md
    page/maintain_site.md
-   page/intro.md
 ```
 
-3. If you want to add your file `intro.md` under the `"Website Develops"` section, add the name `page/intro.md` under the corresponding section `:caption: Website Developers`
+3. If you want to add your file `intro.md` under the `"Website Develops"` section, add the name `page/intro.md` under the corresponding section `:caption: Website Developers`. Note the difference.
 
 ```rst
 Contents
 --------
 .. toctree::
    :maxdepth: 2
-   :caption: Instructors/TAs
+   :caption: Students
 
 
 .. toctree::
