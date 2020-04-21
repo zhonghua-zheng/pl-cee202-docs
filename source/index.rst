@@ -14,6 +14,10 @@ This website provides the information about how to set up and use
 
 Contents
 --------
+.. toctree::
+   :maxdepth: 2
+   :caption: Students
+   
 
 .. toctree::
    :maxdepth: 2

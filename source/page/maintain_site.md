@@ -13,8 +13,9 @@
 
 ## Step 2: Update the index.rst
 
-1. Use text editor (such as [Notepad++](https://notepad-plus-plus.org/) on **Windows** or [Sublime Text](https://www.sublimetext.com/3) on **MacOS/Linux**) to open the `index.rst` (by the directory `pl-cee202-docs/source/index.rst`)
+**\**Important: `Heading 1`** of your markdown file (**not your markdown file name**) will be the section name showing on the webpage.**\****
 
+1. Use text editor (such as [Notepad++](https://notepad-plus-plus.org/) on **Windows** or [Sublime Text](https://www.sublimetext.com/3) on **MacOS/Linux**) to open the `index.rst` (by the directory `pl-cee202-docs/source/index.rst`)
 2. Find the following contents (note: the name will be slightly different)
 
 ```rst
@@ -48,16 +49,15 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: Students
-
+	 
+	 page/<*.md>
 
 .. toctree::
    :maxdepth: 2
    :caption: Instructors/TAs
 
-   page/setup.md
-   page/R_no_coding.md
+   page/<*.md>
    
-
 .. toctree::
    :maxdepth: 2
    :caption: Website Developers

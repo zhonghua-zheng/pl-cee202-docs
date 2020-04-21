@@ -11,8 +11,11 @@
 
 ## How to write?
 
-- You are not required to learn any syntax if you are using [Typora](https://typora.io/).
+**\*Important: `Heading 1` ** of your markdown file (**not your markdown file name**) will be the section name showing on the webpage.
 
+To create a markdown-based documentation:
+
+- You are not required to learn any syntax if you are using [Typora](https://typora.io/).
 - You can learn basica Markdown syntax within 5 mins. See the resources:
   - **Markdown cheatsheet from Markdown Guide** ([link](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf))
 
