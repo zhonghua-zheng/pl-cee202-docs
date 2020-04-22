@@ -1,5 +1,5 @@
-# PrairieLearn for CEE 202 QuickStart
-=====================================
+PrairieLearn for CEE 202 QuickStart
+===================================
 
 |docs|
 
