@@ -18,8 +18,8 @@ According to [wiki](https://en.wikipedia.org/wiki/Markdown):
 To create a markdown-based documentation:
 
 - You are not required to learn any syntax if you are using [Typora](https://typora.io/).
-- You can learn basica Markdown syntax within 5 mins. See the resources:
-  - **Markdown cheatsheet from Markdown Guide** ([link](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf))
+- You can learn basic Markdown syntax within 5 mins. See the resources:
+  - **Markdown cheatsheet from Markdown Guide** ([link](https://www.markdownguide.org/basic-syntax))
 
   - **Markdown cheatsheet from GitHub** ([link](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf))
   - **Extended syntax** ([link](https://www.markdownguide.org/extended-syntax))
