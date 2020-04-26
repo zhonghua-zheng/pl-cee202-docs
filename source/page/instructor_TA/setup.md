@@ -1,4 +1,4 @@
-# How to run PrairieLearn?
+# How to Run PrairieLearn?
 
 For more information, please check [HERE](https://prairielearn.readthedocs.io/en/latest/installing/).
 

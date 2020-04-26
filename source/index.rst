@@ -18,23 +18,25 @@ Table of Contents
    :maxdepth: 2
    :caption: Students
 
-   page/student_test_page.md
+   page/student/student_login.md
    
 
 .. toctree::
    :maxdepth: 2
    :caption: Instructors/TAs
 
-   page/setup.md
-   page/R_no_coding.md
+   page/instructor_TA/setup.md
+   page/instructor_TA/R_no_coding.md
+   page/instructor_TA/multiple-choice.md
+   page/instructor_TA/topics_tags.md
 
 
 .. toctree::
    :maxdepth: 2
    :caption: Website Developers
 
-   page/markdown_intro.md
-   page/maintain_site.md
+   page/web/markdown_intro.md
+   page/web/maintain_site.md
 
 
 How to ask for help

@@ -1,4 +1,4 @@
-# R questions (without coding)
+# R Questions (without coding)
 
 This page is specific to the **R** questions (**without coding**). The objective is:
 
@@ -120,12 +120,11 @@ Note: `a` corresponds to `${{params.a}}$`, `answer_a` corresponds to `answers-na
 ```
 
 * Replace "This is the problem statement." with your **problem statement**
-
 * Replace `${{params.a}}$` with your randomized variable from `server.py` 
-
 * Replace `"answer_a"` with your answer from `server.py`
-
-* Define the tolerance. Sotiria suggests for the answer (0.XX), you need to have `comparison="relabs" rtol="0.01" atol="0.01"`
+* Define the tolerance. Sotiria suggests that: 
+  * for the answer (0.XX), `comparison="relabs" rtol="0.01" atol="0.01"`
+  * for the answer (0.XXX), `comparison="relabs" rtol="0.001" atol="0.001"`
 
 ## Step 3: Test your questions
 

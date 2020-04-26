@@ -9,7 +9,7 @@
 
 - Include your markdown file in the folder `pl-cee202-docs/source/page/`
 
-  Note: if your markdown file name is `"intro.md"`, then the directory of this file is `pl-cee202-docs/source/page/intro.md`
+  Note: if your markdown file name is `intro.md`, then the directory of this file is `pl-cee202-docs/source/page/intro.md`
 
 ## Step 2: Update the index.rst
 
@@ -25,23 +25,23 @@ Contents
    :maxdepth: 2
    :caption: Students
 
-	 page/<*.md>
+   page/student/<*.md>
 
 .. toctree::
    :maxdepth: 2
    :caption: Instructors/TAs
 
-	 page/<*.md>
+   page/instructor_TA/<*.md>
    
 .. toctree::
    :maxdepth: 2
    :caption: Website Developers
 
-   page/markdown_intro.md
-   page/maintain_site.md
+   page/web/markdown_intro.md
+   page/web/maintain_site.md
 ```
 
-* If you want to add your file `intro.md` under the `"Website Develops"` section, add the name `page/intro.md` under the corresponding section `:caption: Website Developers`. Note the difference.
+* If you want to add your page under the `"Website Develops"` section in the left panel, add the name `page/web/intro.md` under the corresponding section `:caption: Website Developers`. Note the difference.
 
 ```rst
 Contents
@@ -49,22 +49,22 @@ Contents
 .. toctree::
    :maxdepth: 2
    :caption: Students
-	 
-	 page/<*.md>
+   
+   page/student/<*.md>
 
 .. toctree::
    :maxdepth: 2
    :caption: Instructors/TAs
-
-   page/<*.md>
+   
+   page/instructor_TA/<*.md>
    
 .. toctree::
    :maxdepth: 2
    :caption: Website Developers
 
-   page/markdown_intro.md
-   page/maintain_site.md
-   page/intro.md
+   page/web/markdown_intro.md
+   page/web/maintain_site.md
+   page/web/intro.md
 ```
 
 ## Step 3: Commit and push to Github
