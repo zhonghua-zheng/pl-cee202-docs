@@ -1,0 +1,30 @@
+language: python
+
+branches:
+  only:
+      - master
+
+notifications:
+  email:
+    recipients:
+      - zhonghua.zheng@outlook.com
+    on_success: change
+    on_failure: always
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - make html
+
+after_script:
+  - cd build/html
+  - git init
+  - git remote add origin https://${REF}
+  - git add .
+  - git commit -m "Updated By Travis-CI With Build $TRAVIS_BUILD_NUMBER For Github Pages"
+  - git push --force --quiet "https://${TOKEN}@${REF}" master:gh-pages
+
+env:
+  global:
+    - REF=github.com/zzheng93/pl-cee202-docs.git
