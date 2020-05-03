@@ -27,6 +27,7 @@ Table of Contents
 
    page/instructor_TA/setup.md
    page/instructor_TA/R_no_coding.md
+   page/instructor_TA/Python_no_coding.md
    page/instructor_TA/multiple-choice.md
    page/instructor_TA/topics_tags.md
    page/instructor_TA/grade_for_compass2g.md

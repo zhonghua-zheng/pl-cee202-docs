@@ -1,18 +1,18 @@
-# R Questions (without coding)
+# Python Questions (without coding)
 
-This page is specific to the **R** questions (**without coding**). The objectives are:
+This page is specific to the **Python** questions (**without coding**). The objectives are:
 
-- Use the necessary R function in the `server.py` to generate the solutions, and grade the questions
+- Use the necessary Python function in the `server.py` to generate the solutions, and grade the questions
 - Specify the randomized variables in the `server.py`
 - Specify the specific files (e.g., **figure**) in the `server.py`
 
 ## Overview
 
-The easiest way to create a R question (without coding) is by copying an existing R question, and change certain files. Then you don't need to create the [UUID](https://www.uuidgenerator.net/) by yourself.
+The easiest way to create a Python question (without coding) is by copying an existing question (either Python or R), and change certain files. Then you don't need to create the [UUID](https://www.uuidgenerator.net/) by yourself.
 
 Note: Each UUID will be assigned to a question only.
 
-## Step 1: Copy a R question
+## Step 1: Copy a question
 
 * Follow the Step 1 to Step 4 in the **[Routine work](https://pl-cee202-docs.readthedocs.io/en/latest/page/setup.html#routine-work)**. Then click **PrarieLearn** logo (next to **Admin**) in the upper left.
 
@@ -54,41 +54,32 @@ Note: Each question folder contain the following files
 ```python
 import rpy2.robjects as robjects
 import prairielearn as pl
+import numpy as np
+from numpy import arange
+from numpy.random import choice
 
 def generate(data):
-    # here is the start the R function
-    values = robjects.r("""
-    # prob 1
-    #a_r = 4.0
-    a_r = sample(seq(3.8,4.3,0.1),1)
-    ans_a_r = 1 + a_r
-    
-    # Export
-    list(  
-         ans = list(a=a_r,
-                    answer_a=ans_a_r)
-       )
-    """)
-    # here is the end of the R function
-    ans = values[0]
-    # Convert from R lists to python dictionaries
-    ans = { key : ans.rx2(key)[0] for key in ans.names }
+    # start to code your solution
+    ## "a" could be 3.8, 3.9, 4.0, 4.1, 4.2
+    a = choice(arange(3.8,4.3,0.1),1)
+    answer_a = a+1
+    # here is the end of your solution
+		
     # Setup output 
-    data['correct_answers'] = ans
+    data['correct_answers']["answer_a"] = answer_a
     # Setup randomized variables
-    data["params"] = ans
+    data["params"]["a"] = a 
     # define the figure name
     image_name = "dist.png"
     data["params"]["image"] = image_name
 ```
 
-* Change the randomized variable using `a_r=sample(seq(start,end,interval),1)`
-
-* Change the answers (`ans_a_r`, `ans_b_r`, ...), and export  (`list(...)`)
+* import the necessary packages at the beginning
+* Change the randomized variable using `a=choice(arange(start,end+interval,interval),1)`
 
 Note: `a` corresponds to `${{params.a}}$`, `answer_a` corresponds to `answers-name="answer_a"` in the `question.html`
 
-* Change the `image_name` (if you have figures(s))
+* Change the `image_name` (if you have figure(s))
 
 ### question.html
 

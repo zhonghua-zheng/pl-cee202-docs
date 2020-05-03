@@ -65,6 +65,7 @@ If p<0.01, the correct answer is True (reject), and vice versa.
 Please note the order for the conditional answers, otherwise the commands `data['correct_answers'] = ans` and `data["params"] = ans` will overwrite your conditional answers. 
 
 ```python
+import prairielearn as pl
 def generate(data):
     values = robjects.r("""
         p_r = sample(c(0.005,0.5),1)
@@ -121,11 +122,11 @@ def generate(data):
 
 ### Appearance
 
-1. If p-value is `0.005`
+- If p-value is `0.005`
 
 ![pl-multiple-choice](./elements/pl-multiple-choice-random_true.png)
 
-2. If p-value is `0.5`
+- If p-value is `0.5`
 
 ![pl-multiple-choice](./elements/pl-multiple-choice-random_false.png)
 
