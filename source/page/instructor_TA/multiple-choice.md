@@ -2,7 +2,7 @@
 
 Reference: ([link](https://prairielearn.readthedocs.io/en/latest/elements/#pl-multiple-choice-element))
 
-The multiplice choice only requires you to modify:
+The multiple choice only requires you to modify:
 
 | Folder/File Name                                    | Usage                                                        |
 | --------------------------------------------------- | ------------------------------------------------------------ |

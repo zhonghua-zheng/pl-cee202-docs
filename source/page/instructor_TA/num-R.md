@@ -1,4 +1,4 @@
-# R Questions (without coding)
+# Numerical Answers with R
 
 This page is specific to the **R** questions (**without coding**). The objectives are:
 
@@ -125,6 +125,24 @@ Note: `a` corresponds to `${{params.a}}$`, `answer_a` corresponds to `answers-na
 * Define the tolerance. Sotiria suggests that: 
   * for the answer (0.XX), `comparison="relabs" rtol="0.01" atol="0.01"`
   * for the answer (0.XXX), `comparison="relabs" rtol="0.001" atol="0.001"`
+
+## Alternatives: Integer
+
+Reference: ([link](https://prairielearn.readthedocs.io/en/latest/elements/#pl-integer-input-element))
+
+If the answer is an **integer**, you need to replace 
+
+```html
+<pl-number-input answers-name="answer_a" weight = "3" comparison="relabs" rtol="0.01" atol="0.01"></pl-number-input>
+```
+
+with
+
+```html
+<pl-integer-input answers-name="answer_a" weight = 3></pl-integer-input>
+```
+
+Where the answer "answer_a" has to be an **integer**.
 
 ## Step 3: Test your questions
 
