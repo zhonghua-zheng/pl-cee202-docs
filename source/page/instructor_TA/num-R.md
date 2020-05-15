@@ -181,8 +181,12 @@ def generate(data):
     lm_model = lm(y ~ x, data = my_data)
     beta_hats = coef(lm_model)
     
-    # This command shows all the attributes, e.g., adj.r.squared
-    attributes(summary(lm_model))
+    # View all the attributes, e.g., adj.r.squared
+    #attributes(summary(lm_model))
+    
+    # New predictions
+    #new_data <- data.frame(x = c(20))
+    #predicted = predict(lm_model,newdata=new_data,interval="confidence", level=0.95)
   
     # Export
     list(  
@@ -192,7 +196,10 @@ def generate(data):
                     slope_se = summary(lm_model)$coefficients[2,2],
                     r_mult=summary(lm_model)$r.squared,
                     lo=confint(lm_model)[2,1],
-                    hi=confint(lm_model)[2,2])
+                    hi=confint(lm_model)[2,2],
+                    pred_low = predicted[2],
+                    pred_high = predicted[3],
+                    corr = cor(x,y))
         )
     """)
     # Extract parameter and answer lists
