@@ -161,3 +161,45 @@ Note: You may do this after you finish all the questions
 * Log in the website https://prairielearn.engr.illinois.edu/pl/, and select your course
 * Click `Sync`, then `Pull from remote git repository`
 * Find your questions by clicking `Questions` and test them again
+
+## Appendix: Answers from R function output
+
+The following `server.py` shows the workflow of doing a simple linear regression
+
+```python
+import rpy2.robjects as robjects
+import prairielearn as pl
+
+def generate(data):
+    # here is the start the R function 
+    values = robjects.r("""
+
+    # Read in the data
+    my_data = read.csv(paste0('./clientFilesQuestion/mydata.csv'))
+
+    # Form a model
+    lm_model = lm(y ~ x, data = my_data)
+    beta_hats = coef(lm_model)
+    
+    # This command shows all the attributes, e.g., adj.r.squared
+    attributes(summary(lm_model))
+  
+    # Export
+    list(  
+         ans = list(beta1 = beta_hats[2],
+                    beta0 = beta_hats[1],
+                    pvalue = summary(lm_model)$coefficients[2,4],
+                    slope_se = summary(lm_model)$coefficients[2,2],
+                    r_mult=summary(lm_model)$r.squared,
+                    lo=confint(lm_model)[2,1],
+                    hi=confint(lm_model)[2,2])
+        )
+    """)
+    # Extract parameter and answer lists
+    ans = values[0]
+    # Convert from R lists to python dictionaries
+    ans = { key : ans.rx2(key)[0] for key in ans.names }
+    # Setup output dictionaries
+    data['correct_answers'] = ans
+```
+
