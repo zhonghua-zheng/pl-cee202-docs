@@ -299,3 +299,5 @@ Finally the questions renders as follows
 ## Closing statement
 
 This example does not follow all the recommended guidelines, for example it is recommended that the student code submission be a function and not a script. However, CEE202 being a beginner course the students are expected to only work with basic scripting. Maybe the question can be improved in future if we wrap the student code in the back end to be run as a function. Furthermore, I would recommend not having different grading methods in the same question, as it confuses the students on the total marks they got, as the manually graded parts are uploaded separately.  However, this was among the messiest questions we had so it was a good example to explain various possibilities. Thanks!
+
+Useful link: [An R Autograder for PrarieLearn](https://arxiv.org/pdf/2003.06500.pdf)
