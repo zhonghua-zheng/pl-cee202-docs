@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- Clone the GitHub from `https://github.com/zzheng93/pl-cee202-docs`
+- Fork or Clone the GitHub from `https://github.com/zzheng93/pl-cee202-docs`
 - Have the markdown file `*.md` ready. This file will be a page for this website
 
 ## Step 1: Include your markdown file
@@ -67,6 +67,8 @@ Contents
    page/web/intro.md
 ```
 
-## Step 3: Commit and push to Github
+## Step 3: Commit and push to GitHub
 
-- You need to have the GitHub permission to do so.
+- If you have the access permission to this GitHub, you can commit push.
+- If you don't have the permission, you can always create a pull request ([how to creat a pull request?](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)).
+
