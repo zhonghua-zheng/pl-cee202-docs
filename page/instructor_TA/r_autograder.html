@@ -1,0 +1,496 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Another example question R autograder &mdash; pl-cee202-docs 0.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="List of Topics and Tags" href="topics_tags.html" />
+    <link rel="prev" title="Checkbox" href="checkbox.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pl-cee202-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Students</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../student/student_login.html">How to Access PrairieLearn?</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Instructors/TAs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="setup.html">How to Run PrairieLearn?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="num-R.html">Numerical Answers with R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="num-Python.html">Numerical Answers with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple-choice.html">Multiple Choice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkbox.html">Checkbox</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Another example question R autograder</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#about">About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#directory-structure">Directory Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#explaining-the-files">Explaining the files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#directory-test">Directory <code class="docutils literal notranslate"><span class="pre">test</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#nested-directory-tests">Nested Directory <code class="docutils literal notranslate"><span class="pre">tests</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#closing-statement">Closing statement</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="topics_tags.html">List of Topics and Tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grade_for_compass2g.html">Grade Transfer from PL to Compass</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Attendance_muddiest_point.html">Attendance and muddiest point compilation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Website Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/markdown_intro.html">Markdown Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/maintain_site.html">Maintain Website</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pl-cee202-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Another example question R autograder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/page/instructor_TA/r_autograder.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="another-example-question-r-autograder">
+<h1>Another example question R autograder<a class="headerlink" href="#another-example-question-r-autograder" title="Permalink to this headline">¶</a></h1>
+<p>By Neetesh Sharma (Department of CEE, University of Illinois, Urbana-Champaign, IL, USA)</p>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<p>This is just a minimalistic run through for an example R auto-graded question in Prairie Learn. The question I explain has both auto-graded and manually graded elements. The QID is <strong>HW8_SP2020_part1_autograde_code</strong>.</p>
+</div>
+<div class="section" id="directory-structure">
+<h2>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>HW8_SP2020_part1_autograde_code
+│   info.json
+│   part1_in.R
+│   part1_obs_in.R
+│   question.html
+│
+└───tests
+    │   part1.R
+    │   points.json
+    │
+    └───tests
+            test_00.R
+            test_01.R
+            test_02.R
+            test_03.R
+            test_04.R
+            test_05.R
+            test_06.R
+            test_07.R
+            test_08.R
+            test_09.R
+            test_10.R
+            test_11.R
+</pre></div>
+</div>
+</div>
+<div class="section" id="explaining-the-files">
+<h2>Explaining the files<a class="headerlink" href="#explaining-the-files" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">info.json</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;09b1ad17-f022-4189-b5ce-250743b8f969&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Exercise 1: Drawing random numbers-1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;Basic R simulation&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;SP20&quot;</span><span class="p">,</span><span class="s2">&quot;easy&quot;</span><span class="p">,</span><span class="s2">&quot;Sotiria&quot;</span><span class="p">,</span><span class="s2">&quot;code&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;v3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;singleVariant&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s2">&quot;gradingMethod&quot;</span><span class="p">:</span> <span class="s2">&quot;External&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;externalGradingOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;enabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="s2">&quot;stat430/pl&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;serverFilesCourse&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;r_autograder/&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;entrypoint&quot;</span><span class="p">:</span> <span class="s2">&quot;/grade/serverFilesCourse/r_autograder/run.sh&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="mi">60</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If you are coding a new problem while using the same autograder, the things to change would be the <code class="docutils literal notranslate"><span class="pre">uuid</span></code>, <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">topic</span></code>, <code class="docutils literal notranslate"><span class="pre">tags</span></code>, and <code class="docutils literal notranslate"><span class="pre">timeout</span></code> under the <code class="docutils literal notranslate"><span class="pre">externalGradingOptions</span></code>. The <code class="docutils literal notranslate"><span class="pre">timeout</span></code> is the time in seconds that is allowed for each student submission to be processed. Submission is considered incorrect  if it runs longer than the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> duration. Try to keep it minimum (typically 5 to 10 seconds for a small problem, simulations take longer).</p>
+<p><code class="docutils literal notranslate"><span class="pre">question.html</span></code></p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card my-2&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-header&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Exercise<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-body&quot;</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">pl-question-panel</span><span class="p">&gt;</span>
+	  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+	    Set the seed equal to $61820$. Generate $5, 50, 500, 5,000, 50,000, 5,000,000$ numbers from a $\text{Binomial distribution with } (n=100, p=0.4)$ and assign them to variables named $b1, b2, b3, b4, b5, b6$ respectively. Also generate the same amount of numbers from a $\text{Poisson distribution with } (λ=40)$ and assign them to variables named $p1, p2, p3, p4, p5, p6$. Plot the outputs from each experiment in histograms, using function <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>hist()<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>.
+	  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+	  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>You may use <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>par(mfrow=c(2,6))<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>, just before the <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>hist()<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span> functions, to organize your graphs in $2$ rows of $6$ plots for easier comparison. This will result in one row for the Binomial histograms and one row for the corresponding (in terms of number of random numbers generated) Poisson histograms.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+	  <span class="p">&lt;</span><span class="nt">pl-file-editor</span> <span class="na">file-name</span><span class="o">=</span><span class="s">&quot;part1_stu.R&quot;</span> <span class="na">ace-mode</span><span class="o">=</span><span class="s">&quot;ace/mode/r&quot;</span> <span class="na">source-file-name</span><span class="o">=</span><span class="s">&quot;part1_in.R&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">pl-file-editor</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">pl-question-panel</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">pl-submission-panel</span><span class="p">&gt;</span>
+	  <span class="p">&lt;</span><span class="nt">pl-file-preview</span><span class="p">&gt;&lt;/</span><span class="nt">pl-file-preview</span><span class="p">&gt;</span>
+	  <span class="p">&lt;</span><span class="nt">pl-external-grader-results</span><span class="p">&gt;&lt;/</span><span class="nt">pl-external-grader-results</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">pl-submission-panel</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card my-2&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-header&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Observation<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-body&quot;</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">pl-question-panel</span><span class="p">&gt;</span>
+	  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+	    What did you observe from the above experiments? Write as a comment (as R comment) in the following window.
+	  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">pl-file-editor</span> <span class="na">file-name</span><span class="o">=</span><span class="s">&quot;part1_obs.R&quot;</span> <span class="na">ace-mode</span><span class="o">=</span><span class="s">&quot;ace/mode/python&quot;</span> <span class="na">source-file-name</span><span class="o">=</span><span class="s">&quot;part1_obs_in.R&quot;</span> <span class="na">min-lines</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="na">auto-resize</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">pl-file-editor</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card my-2&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-header&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Plot<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-body&quot;</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">pl-question-panel</span><span class="p">&gt;</span>
+	  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+	    Upload a PDF of the plot generated from your code. Using the following link. Name of the PDF file must be <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>part1_plots.pdf<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>. (Once you have created the plots in R, look just above the plots to see and click the Export tab, which has the option to export the plots to a .pdf file).
+	  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+	  <span class="p">&lt;</span><span class="nt">pl-file-upload</span> <span class="na">file-names</span><span class="o">=</span><span class="s">&quot;part1_plots.pdf&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">pl-file-upload</span><span class="p">&gt;</span>
+
+	<span class="p">&lt;</span><span class="nt">pl-submission-panel</span><span class="p">&gt;</span>
+	  <span class="p">&lt;</span><span class="nt">pl-file-preview</span><span class="p">&gt;&lt;/</span><span class="nt">pl-file-preview</span><span class="p">&gt;</span>
+	  <span class="p">&lt;</span><span class="nt">pl-external-grader-results</span><span class="p">&gt;&lt;/</span><span class="nt">pl-external-grader-results</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">pl-submission-panel</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>This is a three part questions, the first <code class="docutils literal notranslate"><span class="pre">card</span></code> shows the autograded portion. The second <code class="docutils literal notranslate"><span class="pre">card</span></code> is the manually graded comment, and the third <code class="docutils literal notranslate"><span class="pre">card</span></code> is the manually graded <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> plot file.</p>
+<p>Specifically in the code snippet</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>	  <span class="p">&lt;</span><span class="nt">pl-file-editor</span> <span class="na">file-name</span><span class="o">=</span><span class="s">&quot;part1_stu.R&quot;</span> <span class="na">ace-mode</span><span class="o">=</span><span class="s">&quot;ace/mode/r&quot;</span> <span class="na">source-file-name</span><span class="o">=</span><span class="s">&quot;part1_in.R&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">pl-file-editor</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>the <code class="docutils literal notranslate"><span class="pre">file-name</span></code> variable is the what the student submission will be saved as, whereas <code class="docutils literal notranslate"><span class="pre">source-file-name</span></code></p>
+<p>is the starter code which the students will see, and that we need to provide.</p>
+<p><code class="docutils literal notranslate"><span class="pre">part1_in.R</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter code below</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">part1_obs_in.R</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter comment</span>
+</pre></div>
+</div>
+<p>These are the starter code the students see in the code input window for each <code class="docutils literal notranslate"><span class="pre">card</span></code> respectively.</p>
+<div class="section" id="directory-test">
+<h3>Directory <code class="docutils literal notranslate"><span class="pre">test</span></code><a class="headerlink" href="#directory-test" title="Permalink to this headline">¶</a></h3>
+<p>This directory is only relevant to the autograded portion of the question.</p>
+<p>First the two files:</p>
+<p><code class="docutils literal notranslate"><span class="pre">part1.R</span></code></p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">set.seed</span><span class="p">(</span><span class="m">61820</span><span class="p">)</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">100</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.4</span><span class="p">)</span>
+<span class="n">b2</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">50</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">100</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.4</span><span class="p">)</span>
+<span class="n">b3</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">500</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">100</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.4</span><span class="p">)</span>
+<span class="n">b4</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">5000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">100</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.4</span><span class="p">)</span>
+<span class="n">b5</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">50000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">100</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.4</span><span class="p">)</span>
+<span class="n">b6</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">5000000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">100</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.4</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="nf">rpois</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">40</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="nf">rpois</span><span class="p">(</span><span class="m">50</span><span class="p">,</span><span class="m">40</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="nf">rpois</span><span class="p">(</span><span class="m">500</span><span class="p">,</span><span class="m">40</span><span class="p">)</span>
+<span class="n">p4</span> <span class="o">=</span> <span class="nf">rpois</span><span class="p">(</span><span class="m">5000</span><span class="p">,</span><span class="m">40</span><span class="p">)</span>
+<span class="n">p5</span> <span class="o">=</span> <span class="nf">rpois</span><span class="p">(</span><span class="m">50000</span><span class="p">,</span><span class="m">40</span><span class="p">)</span>
+<span class="n">p6</span> <span class="o">=</span> <span class="nf">rpois</span><span class="p">(</span><span class="m">5000000</span><span class="p">,</span><span class="m">40</span><span class="p">)</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">6</span><span class="p">))</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">b3</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">b4</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">b5</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">b6</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">p4</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">p5</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">p6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This file contains the code, which is the correct solution of the problem.</p>
+<p><code class="docutils literal notranslate"><span class="pre">points.json</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test b1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;test_00.R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_points&quot;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">},</span>
+
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test b2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;test_01.R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_points&quot;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test b3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;test_02.R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_points&quot;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test b4&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;test_03.R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_points&quot;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test b5&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;test_04.R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_points&quot;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test b6&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;test_05.R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_points&quot;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test p1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;test_06.R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_points&quot;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test p2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;test_07.R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_points&quot;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test p3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;test_08.R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_points&quot;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test p4&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;test_09.R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_points&quot;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test p5&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;test_10.R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_points&quot;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test p6&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;test_11.R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_points&quot;</span><span class="p">:</span><span class="mi">2</span>
+    <span class="p">}</span>
+	<span class="p">]</span>
+</pre></div>
+</div>
+<p>This file list the name of the unit tests (make them relevant to what you are testing as the student will see which tests the student passed or not and modify their submission accordingly), the name of the file for all the unit test, and the points for passing the unit tests.</p>
+<p>The unit tests themselves are in another subdirectory named tests, lets call it the nested directory <code class="docutils literal notranslate"><span class="pre">tests</span></code>.</p>
+<div class="section" id="nested-directory-tests">
+<h4>Nested Directory <code class="docutils literal notranslate"><span class="pre">tests</span></code><a class="headerlink" href="#nested-directory-tests" title="Permalink to this headline">¶</a></h4>
+<p>I will just explain one of the tests</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># load student results</span>
+<span class="nf">Sys.chmod</span><span class="p">(</span><span class="s">&quot;/grade/student/part1_stu.R&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&quot;0664&quot;</span><span class="p">)</span>
+<span class="n">student</span> <span class="o">&lt;-</span> <span class="n">unix</span><span class="o">::</span><span class="nf">eval_safe</span><span class="p">({</span><span class="nf">source</span><span class="p">(</span><span class="s">&quot;/grade/student/part1_stu.R&quot;</span><span class="p">);</span> <span class="n">b1</span><span class="p">},</span> <span class="n">uid</span><span class="o">=</span><span class="m">1001</span><span class="p">)</span>
+
+<span class="c1"># load correct results</span>
+<span class="nf">source</span><span class="p">(</span><span class="s">&quot;/grade/tests/part1.R&quot;</span><span class="p">)</span>
+<span class="n">correct</span> <span class="o">&lt;-</span> <span class="n">b1</span>
+
+<span class="c1">#compare</span>
+<span class="nf">using</span><span class="p">(</span><span class="n">ttdo</span><span class="p">)</span>
+<span class="nf">expect_equivalent_with_diff</span><span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="n">correct</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&quot;unified&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&quot;ansi256&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The unit tests have a simple structure with three steps:</p>
+<ol class="simple">
+<li><p>Load the student results by running the submitted code, and extracting any variable or function evaluation of interest. The complicated way of running the student code is due to security considerations.</p></li>
+<li><p>Run the correct source code and extract the corresponding benchmark result.</p></li>
+<li><p>Compare the two</p></li>
+</ol>
+<p>Finally the questions renders as follows</p>
+<p><img alt="../../_images/render.png" src="../../_images/render.png" /></p>
+</div>
+</div>
+</div>
+<div class="section" id="closing-statement">
+<h2>Closing statement<a class="headerlink" href="#closing-statement" title="Permalink to this headline">¶</a></h2>
+<p>This example does not follow all the recommended guidelines, for example it is recommended that the student code submission be a function and not a script. However, CEE202 being a beginner course the students are expected to only work with basic scripting. Maybe the question can be improved in future if we wrap the student code in the back end to be run as a function. Furthermore, I would recommend not having different grading methods in the same question, as it confuses the students on the total marks they got, as the manually graded parts are uploaded separately.  However, this was among the messiest questions we had so it was a good example to explain various possibilities. Thanks!</p>
+<p>Useful link: <a class="reference external" href="https://arxiv.org/pdf/2003.06500.pdf">An R Autograder for PrarieLearn</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="topics_tags.html" class="btn btn-neutral float-right" title="List of Topics and Tags" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="checkbox.html" class="btn btn-neutral float-left" title="Checkbox" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Zhonghua Zheng
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Numerical Answers with Python &mdash; pl-cee202-docs 0.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Multiple Choice" href="multiple-choice.html" />
+    <link rel="prev" title="Numerical Answers with R" href="num-R.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pl-cee202-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Students</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../student/student_login.html">How to Access PrairieLearn?</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Instructors/TAs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="setup.html">How to Run PrairieLearn?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="num-R.html">Numerical Answers with R</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Numerical Answers with Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-copy-a-question">Step 1: Copy a question</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-modify-the-questions">Step 2: Modify the questions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#info-json">info.json</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#server-py">server.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#question-html">question.html</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#alternatives-integer">Alternatives: Integer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-test-your-questions">Step 3: Test your questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4-commit-and-push-the-changes">Step 4: Commit and push the changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-5-sync-and-test">Step 5: Sync and test</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="multiple-choice.html">Multiple Choice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkbox.html">Checkbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="r_autograder.html">Another example question R autograder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topics_tags.html">List of Topics and Tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grade_for_compass2g.html">Grade Transfer from PL to Compass</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Attendance_muddiest_point.html">Attendance and muddiest point compilation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Website Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/markdown_intro.html">Markdown Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/maintain_site.html">Maintain Website</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pl-cee202-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Numerical Answers with Python</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/page/instructor_TA/num-Python.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="numerical-answers-with-python">
+<h1>Numerical Answers with Python<a class="headerlink" href="#numerical-answers-with-python" title="Permalink to this headline">¶</a></h1>
+<p>This page is specific to the <strong>Python</strong> questions (<strong>without coding</strong>). The objectives are:</p>
+<ul class="simple">
+<li><p>Use the necessary Python function in the <code class="docutils literal notranslate"><span class="pre">server.py</span></code> to generate the solutions, and grade the questions</p></li>
+<li><p>Specify the randomized variables in the <code class="docutils literal notranslate"><span class="pre">server.py</span></code></p></li>
+<li><p>Specify the specific files (e.g., <strong>figure</strong>) in the <code class="docutils literal notranslate"><span class="pre">server.py</span></code></p></li>
+</ul>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to create a Python question (without coding) is by copying an existing question (either Python or R), and change certain files. Then you don’t need to create the <a class="reference external" href="https://www.uuidgenerator.net/">UUID</a> by yourself.</p>
+<p>Note: Each UUID will be assigned to a question only.</p>
+</div>
+<div class="section" id="step-1-copy-a-question">
+<h2>Step 1: Copy a question<a class="headerlink" href="#step-1-copy-a-question" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Follow the Step 1 to Step 4 in the <strong><a class="reference external" href="https://pl-cee202-docs.readthedocs.io/en/latest/page/setup.html#routine-work">Routine work</a></strong>. Then click <strong>PrarieLearn</strong> logo (next to <strong>Admin</strong>) in the upper left.</p></li>
+<li><p>Click a course such as <strong><code class="docutils literal notranslate"><span class="pre">CEE</span> <span class="pre">202:</span> <span class="pre">Engineering</span> <span class="pre">Risk</span> <span class="pre">&amp;</span> <span class="pre">Uncertainty</span></code></strong> in the <code class="docutils literal notranslate"><span class="pre">Courses</span></code> (not <code class="docutils literal notranslate"><span class="pre">Course</span> <span class="pre">instances</span></code>) list.</p></li>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">Questions</span></code> (next to <code class="docutils literal notranslate"><span class="pre">Issues</span></code>) on the top line.</p></li>
+<li><p>Find a question you want to copy (for example: <code class="docutils literal notranslate"><span class="pre">AS4_Prob5_2020_AngTang</span></code>).</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Settings</span></code> between <code class="docutils literal notranslate"><span class="pre">Preview</span></code> and <code class="docutils literal notranslate"><span class="pre">Statistics</span></code>.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Make</span> <span class="pre">a</span> <span class="pre">copy</span> <span class="pre">of</span> <span class="pre">this</span> <span class="pre">question</span></code></p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">QID</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="step-2-modify-the-questions">
+<h2>Step 2: Modify the questions<a class="headerlink" href="#step-2-modify-the-questions" title="Permalink to this headline">¶</a></h2>
+<p>Before you modifying the question, I strongly suggest creating a <strong>spreadsheet</strong> to keep track of the questions (including title, topic, tags) and corresponding UUID.</p>
+<p>Note: Each question folder contain the following files</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Folder/File Name</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>info.json</td>
+<td>The information of the question such as title, topic, tags, and uuid.</td>
+</tr>
+<tr>
+<td>question.html</td>
+<td>The main body of the question</td>
+</tr>
+<tr>
+<td>server.py</td>
+<td>The solution to the question, but it also species</td>
+</tr>
+<tr>
+<td>clientFilesQuestion</td>
+<td>Save the figures for the question.</td>
+</tr>
+<tr>
+<td>clientFilesQuestion<br>/dist.png</td>
+<td>The figure needes to be added to the question</td>
+</tr>
+</tbody>
+</table><div class="section" id="info-json">
+<h3>info.json<a class="headerlink" href="#info-json" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Edit</span></code> under <code class="docutils literal notranslate"><span class="pre">Settings</span></code></p></li>
+<li><p>Define the <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">topic</span></code>, <code class="docutils literal notranslate"><span class="pre">tags</span></code>, and <code class="docutils literal notranslate"><span class="pre">type</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="server-py">
+<h3>server.py<a class="headerlink" href="#server-py" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Files</span></code> (under <code class="docutils literal notranslate"><span class="pre">PrairieLearn</span></code> in the upper left) → <code class="docutils literal notranslate"><span class="pre">Edit</span></code> the <code class="docutils literal notranslate"><span class="pre">server.py</span></code>, then you need to finish the following tasks:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rpy2.robjects</span> <span class="k">as</span> <span class="nn">robjects</span>
+<span class="kn">import</span> <span class="nn">prairielearn</span> <span class="k">as</span> <span class="nn">pl</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">arange</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">choice</span>
+
+<span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="c1"># start to code your solution</span>
+    <span class="c1">## &quot;a&quot; could be 3.8, 3.9, 4.0, 4.1, 4.2</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mf">3.8</span><span class="p">,</span><span class="mf">4.3</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">answer_a</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="mi">1</span>
+    <span class="c1"># here is the end of your solution</span>
+		
+    <span class="c1"># Setup output </span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;correct_answers&#39;</span><span class="p">][</span><span class="s2">&quot;answer_a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">answer_a</span>
+    <span class="c1"># Setup randomized variables</span>
+    <span class="n">data</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">][</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span> 
+    <span class="c1"># define the figure name</span>
+    <span class="n">image_name</span> <span class="o">=</span> <span class="s2">&quot;dist.png&quot;</span>
+    <span class="n">data</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">][</span><span class="s2">&quot;image&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">image_name</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>import the necessary packages at the beginning</p></li>
+<li><p>Change the randomized variable using <code class="docutils literal notranslate"><span class="pre">a=choice(arange(start,end+interval,interval),1)</span></code></p></li>
+</ul>
+<p>Note: <code class="docutils literal notranslate"><span class="pre">a</span></code> corresponds to <code class="docutils literal notranslate"><span class="pre">${{params.a}}$</span></code>, <code class="docutils literal notranslate"><span class="pre">answer_a</span></code> corresponds to <code class="docutils literal notranslate"><span class="pre">answers-name=&quot;answer_a&quot;</span></code> in the <code class="docutils literal notranslate"><span class="pre">question.html</span></code></p>
+<ul class="simple">
+<li><p>Change the <code class="docutils literal notranslate"><span class="pre">image_name</span></code> (if you have figure(s))</p></li>
+</ul>
+</div>
+<div class="section" id="question-html">
+<h3>question.html<a class="headerlink" href="#question-html" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Files</span></code> (under <code class="docutils literal notranslate"><span class="pre">PrairieLearn</span></code> in the upper left) → <code class="docutils literal notranslate"><span class="pre">Edit</span></code> the <code class="docutils literal notranslate"><span class="pre">question.html</span></code>, then you need to finish the following tasks:</p></li>
+</ul>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">pl-question-panel</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> 
+	This is the problem statement.
+	<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">pl-figure</span> <span class="na">file-name</span><span class="o">=</span><span class="s">{{params.image}}</span> <span class="na">directory</span><span class="o">=</span><span class="s">&quot;clientFilesQuestion&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">pl-figure</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">pl-question-panel</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">pl-question-panel</span><span class="p">&gt;&lt;</span><span class="nt">hr</span><span class="p">&gt;&lt;/</span><span class="nt">pl-question-panel</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">pl-question-panel</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+	    (a) Determine the probability that the settlement will exceed ${{params.a}}$ cm.
+	<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">pl-question-panel</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card my-2&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-body&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">pl-question-panel</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>The answer is: (0.XX)<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">pl-question-panel</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">pl-number-input</span> <span class="na">answers-name</span><span class="o">=</span><span class="s">&quot;answer_a&quot;</span> <span class="na">weight </span><span class="o">=</span> <span class="s">&quot;3&quot;</span> <span class="na">comparison</span><span class="o">=</span><span class="s">&quot;relabs&quot;</span> <span class="na">rtol</span><span class="o">=</span><span class="s">&quot;0.01&quot;</span> <span class="na">atol</span><span class="o">=</span><span class="s">&quot;0.01&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">pl-number-input</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Replace “This is the problem statement.” with your <strong>problem statement</strong></p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">${{params.a}}$</span></code> with your randomized variable from <code class="docutils literal notranslate"><span class="pre">server.py</span></code></p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">&quot;answer_a&quot;</span></code> with your answer from <code class="docutils literal notranslate"><span class="pre">server.py</span></code></p></li>
+<li><p>Define the tolerance. Sotiria suggests that:</p>
+<ul>
+<li><p>for the answer (0.XX), <code class="docutils literal notranslate"><span class="pre">comparison=&quot;relabs&quot;</span> <span class="pre">rtol=&quot;0.01&quot;</span> <span class="pre">atol=&quot;0.01&quot;</span></code></p></li>
+<li><p>for the answer (0.XXX), <code class="docutils literal notranslate"><span class="pre">comparison=&quot;relabs&quot;</span> <span class="pre">rtol=&quot;0.001&quot;</span> <span class="pre">atol=&quot;0.001&quot;</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="alternatives-integer">
+<h2>Alternatives: Integer<a class="headerlink" href="#alternatives-integer" title="Permalink to this headline">¶</a></h2>
+<p>Reference: (<a class="reference external" href="https://prairielearn.readthedocs.io/en/latest/elements/#pl-integer-input-element">link</a>)</p>
+<p>If the answer is an <strong>integer</strong>, you need to replace</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">pl-number-input</span> <span class="na">answers-name</span><span class="o">=</span><span class="s">&quot;answer_a&quot;</span> <span class="na">weight </span><span class="o">=</span> <span class="s">&quot;3&quot;</span> <span class="na">comparison</span><span class="o">=</span><span class="s">&quot;relabs&quot;</span> <span class="na">rtol</span><span class="o">=</span><span class="s">&quot;0.01&quot;</span> <span class="na">atol</span><span class="o">=</span><span class="s">&quot;0.01&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">pl-number-input</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>with</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">pl-integer-input</span> <span class="na">answers-name</span><span class="o">=</span><span class="s">&quot;answer_a&quot;</span> <span class="na">weight </span><span class="o">=</span> <span class="s">3</span><span class="p">&gt;&lt;/</span><span class="nt">pl-integer-input</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Where the answer “answer_a” has to be an <strong>integer</strong>.</p>
+</div>
+<div class="section" id="step-3-test-your-questions">
+<h2>Step 3: Test your questions<a class="headerlink" href="#step-3-test-your-questions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Preview</span></code> to test</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">variant</span></code> to have another test</p></li>
+</ul>
+</div>
+<div class="section" id="step-4-commit-and-push-the-changes">
+<h2>Step 4: Commit and push the changes<a class="headerlink" href="#step-4-commit-and-push-the-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Using Git to commit and push the changes</p></li>
+</ul>
+<p>Note: You may do this after you finish all the questions</p>
+</div>
+<div class="section" id="step-5-sync-and-test">
+<h2>Step 5: Sync and test<a class="headerlink" href="#step-5-sync-and-test" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Log in the website https://prairielearn.engr.illinois.edu/pl/, and select your course</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Sync</span></code>, then <code class="docutils literal notranslate"><span class="pre">Pull</span> <span class="pre">from</span> <span class="pre">remote</span> <span class="pre">git</span> <span class="pre">repository</span></code></p></li>
+<li><p>Find your questions by clicking <code class="docutils literal notranslate"><span class="pre">Questions</span></code> and test them again</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="multiple-choice.html" class="btn btn-neutral float-right" title="Multiple Choice" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="num-R.html" class="btn btn-neutral float-left" title="Numerical Answers with R" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Zhonghua Zheng
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
