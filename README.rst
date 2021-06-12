@@ -16,7 +16,7 @@ Please see `online documentation <http://pl-cee202-docs.readthedocs.io/en/latest
    :target: http://pl-cee202-docs.readthedocs.io/en/latest/?badge=latest
    :alt: documentation status
 
-.. |travis-CI| image:: https://travis-ci.com/zzheng93/Environmental-Data-Science-Book.svg?token=CBLEHzd6NLjgYWdvk7w9&branch=master
+.. |travis-CI| image:: https://travis-ci.com/zzheng93/pl-cee202-docs.svg?branch=master
     :target: https://travis-ci.com/zzheng93/Environmental-Data-Science-Book
 
 
