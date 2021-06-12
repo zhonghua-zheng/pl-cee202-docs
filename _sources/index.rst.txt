@@ -6,7 +6,9 @@
 PrairieLearn Information for CEE 202 - CEE @ Illinois
 =====================================================
 
-|docs| |travis-CI|
+|docs|
+
+Author: Dr. Zhonghua Zheng (zhonghua.zheng@outlook.com)
 
 This website provides the information about how to set up and use
 `PrairieLearn <https://prairielearn.readthedocs.io/en/latest/>`_ tailored for `CEE 202 <http://catalog.illinois.edu/courses-of-instruction/cee/>`_ - Engineering Risk & Uncertainty.
@@ -56,9 +58,6 @@ The `GitHub issue tracker <https://github.com/zzheng93/pl-cee202-docs/issues>`_ 
 .. |docs| image:: https://readthedocs.org/projects/pl-cee202-docs/badge/?version=latest
    :target: http://pl-cee202-docs.readthedocs.io/en/latest/?badge=latest
    :alt: documentation status
-
-.. |travis-CI| image:: https://travis-ci.com/zzheng93/Environmental-Data-Science-Book.svg?token=CBLEHzd6NLjgYWdvk7w9&branch=master
-    :target: https://travis-ci.com/zzheng93/Environmental-Data-Science-Book
 
 
 .. Indices and tables
