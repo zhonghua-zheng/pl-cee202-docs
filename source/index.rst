@@ -35,6 +35,7 @@ Table of Contents
    page/instructor_TA/multiple-choice.md
    page/instructor_TA/checkbox.md
    page/instructor_TA/r_autograder.md
+   page/instructor_TA/r_notebook_autograder.md
    page/instructor_TA/topics_tags.md
    page/instructor_TA/grade_for_compass2g.md
    page/instructor_TA/Attendance_muddiest_point.md
