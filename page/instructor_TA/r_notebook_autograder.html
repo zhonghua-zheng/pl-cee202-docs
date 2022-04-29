@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Review of autograding example R notebook &mdash; pl-cee202-docs 0.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> pl-cee202-docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Students</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../student/student_login.html">How to Access PrairieLearn?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Instructors/TAs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">How to Run PrairieLearn?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="num-R.html">Numerical Answers with R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="num-Python.html">Numerical Answers with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple-choice.html">Multiple Choice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkbox.html">Checkbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="r_autograder.html">Another example question R autograder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topics_tags.html">List of Topics and Tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grade_for_compass2g.html">Grade Transfer from PL to Compass</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Attendance_muddiest_point.html">Attendance and muddiest point compilation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Website Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/markdown_intro.html">Markdown Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/maintain_site.html">Maintain Website</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pl-cee202-docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Review of autograding example R notebook</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/page/instructor_TA/r_notebook_autograder.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="review-of-autograding-example-r-notebook">
+<h1>Review of autograding example R notebook<a class="headerlink" href="#review-of-autograding-example-r-notebook" title="Permalink to this headline"></a></h1>
+<p>By Advai Podduturi (Department of CS, University of Illinois, Urbana-Champaign, IL, USA)</p>
+<section id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline"></a></h2>
+<p>This guide will cover how to write a deploy an R notebook as an autogradable assignment on Prairielearn.</p>
+</section>
+<section id="directory-structures">
+<h2>Directory Structures<a class="headerlink" href="#directory-structures" title="Permalink to this headline"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>WSXX_Example_Topic
+<span class="p">|</span>   info.json
+<span class="p">|</span>   question.html
+<span class="p">|</span>
+<span class="p">|</span>___tests
+<span class="p">|</span>   points.json
+<span class="p">|</span>   <span class="p">|</span>   ans1.R
+<span class="p">|</span>   <span class="p">|</span>   ans2.R
+<span class="p">|</span>   <span class="p">|</span>   ans3.R
+<span class="p">|</span>   <span class="p">|</span>___tests
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>   test1.R
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>   test2.R
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>   test3.R
+<span class="p">|</span>   <span class="p">|</span>
+<span class="p">|</span>___workspace
+<span class="p">|</span>   <span class="p">|</span> Workbook.ipynb
+<span class="p">|</span>   
+</pre></div>
+</div>
+</section>
+<section id="explaining-the-files">
+<h2>Explaining the files<a class="headerlink" href="#explaining-the-files" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">info.json</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;09b1ad17-f022-4189-b5ce-250743b8f969&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;WSXX Example Topic&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;Basic R Notebook&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;Spring2022&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Sotiria&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Priyam&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CLT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Jupyter&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;v3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;singleVariant&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s2">&quot;workspaceOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="s2">&quot;prairielearn/workspace-jupyterlab&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;port&quot;</span><span class="p">:</span> <span class="mi">8080</span><span class="p">,</span>
+        <span class="s2">&quot;home&quot;</span><span class="p">:</span> <span class="s2">&quot;/home/jovyan&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rewriteUrl&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;gradedFiles&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;Workbook.ipynb&quot;</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;gradingMethod&quot;</span><span class="p">:</span> <span class="s2">&quot;External&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;externalGradingOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;enabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="s2">&quot;advai/grader-r-advai&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;serverFilesCourse&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;r_autograder/&quot;</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;entrypoint&quot;</span><span class="p">:</span> <span class="s2">&quot;/grade/serverFilesCourse/r_autograder/run.sh&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="mi">20</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If you are coding a new problem while using the same autograder, the things to change would be the <code class="docutils literal notranslate"><span class="pre">uuid</span></code>, <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">topic</span></code>, <code class="docutils literal notranslate"><span class="pre">tags</span></code>, and <code class="docutils literal notranslate"><span class="pre">timeout</span></code> under the <code class="docutils literal notranslate"><span class="pre">externalGradingOptions</span></code>. The <code class="docutils literal notranslate"><span class="pre">timeout</span></code> is the time in seconds that is allowed for each student submission to be processed. Submission is considered incorrect  if it runs longer than the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> duration. Try to keep it minimum (typically 5 to 10 seconds for a small problem, simulations take longer).</p>
+<p>The R notebook autograder image is stored under advai/grader-r-advai.</p>
+<p><code class="docutils literal notranslate"><span class="pre">question.html</span></code></p>
+<p>I typically use the same template for this that just displays the button for opening the Prairielearn Jupyter interface.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">pl-question-panel</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is a workspace question with an in-browser <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://jupyter.org&quot;</span><span class="p">&gt;</span>JupyterLab<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.
+  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+      In this worksheet, you will be learning about and understanding &quot;Example Topic&quot;. 
+  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+      Once in the JupyterLab environment, please, open workbook called <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Workbook.ipynb<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>. After you complete your code in it, save the workbook and come back to this Prairie Learn question window to click Save and Grade button. Ignore the other .ipynb workspace you see. <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">pl-external-grader-variables</span> <span class="na">params-name</span><span class="o">=</span><span class="s">&quot;names_from_user&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">pl-external-grader-variables</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">pl-workspace</span><span class="p">&gt;&lt;/</span><span class="nt">pl-workspace</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">pl-question-panel</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">pl-submission-panel</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">pl-external-grader-results</span><span class="p">&gt;&lt;/</span><span class="nt">pl-external-grader-results</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">pl-file-preview</span><span class="p">&gt;&lt;/</span><span class="nt">pl-file-preview</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">pl-submission-panel</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="subdirectory-tests">
+<h2>Subdirectory: <code class="docutils literal notranslate"><span class="pre">tests</span></code><a class="headerlink" href="#subdirectory-tests" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">points.json</span></code></p>
+<p>You can define any number of tests you want by just creating more test files under tests/tests. To assign points to these tests, you need to edit the points.json.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test 1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;test1.R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_points&quot;</span><span class="p">:</span><span class="mi">1</span>
+    <span class="p">},</span>
+    
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test 2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;test2.R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_points&quot;</span><span class="p">:</span><span class="mi">3</span>
+    <span class="p">},</span>
+    
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Test 3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;test3.R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_points&quot;</span><span class="p">:</span><span class="mi">5</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ans1.R</span></code></p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">#grade {p1_t0, p1_ta, p1_pvalue}</span>
+<span class="c1">#1) Fixed probability track </span>
+<span class="c1">#calculate the t-statistic from the data</span>
+<span class="n">p1_alpha</span><span class="o">&lt;-</span> <span class="m">0.05</span> <span class="c1"># Alpha Value</span>
+<span class="n">p1_xbar</span> <span class="o">&lt;-</span> <span class="m">1.9</span> <span class="c1"># Sample Mean of 25 trips</span>
+<span class="n">p1_mu</span><span class="o">&lt;-</span> <span class="m">2.0</span> <span class="c1"># Traditional fuel intensity</span>
+<span class="n">p1_s</span><span class="o">&lt;-</span> <span class="m">0.2</span> <span class="c1"># Standard deviaion</span>
+<span class="n">p1_n</span><span class="o">&lt;-</span> <span class="m">25</span> <span class="c1"># Sample size</span>
+<span class="n">p1_t0</span> <span class="o">&lt;-</span> <span class="nf">round</span><span class="p">((</span><span class="n">p1_xbar</span> <span class="o">-</span> <span class="n">p1_mu</span><span class="p">)</span><span class="o">/</span> <span class="p">(</span><span class="n">p1_s</span><span class="o">/</span><span class="n">p1_n</span><span class="o">^</span><span class="m">0.5</span><span class="p">),</span> <span class="m">3</span><span class="p">)</span> <span class="c1"># critical value of null</span>
+
+<span class="c1">#find the t-value for the significance level 0.05 with n-1 dof</span>
+<span class="n">p1_ta</span> <span class="o">&lt;-</span> <span class="nf">round</span><span class="p">(</span><span class="nf">qt</span><span class="p">(</span><span class="n">p1_alpha</span><span class="p">,</span> <span class="p">(</span><span class="n">p1_n</span><span class="m">-1</span><span class="p">),</span> <span class="n">lower.tail</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">log.p</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">),</span> <span class="m">3</span><span class="p">)</span> <span class="c1"># critical value of alternative</span>
+
+<span class="n">p1_pvalue</span> <span class="o">&lt;-</span> <span class="nf">round</span><span class="p">(</span><span class="nf">pt</span><span class="p">(</span><span class="n">p1_t0</span><span class="p">,</span> <span class="p">(</span><span class="n">p1_n</span><span class="m">-1</span><span class="p">),</span> <span class="n">lower.tail</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">log.p</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">),</span> <span class="m">3</span><span class="p">)</span> <span class="c1"># P value</span>
+</pre></div>
+</div>
+<p>Here we can see that all the supporting variables for the p1_t0, p1_ta, and p1_pvalue computations are available in the ans1.R file. Not including the right variables is a common way to make bugs when autograding R notebooks. <strong>Use unique variable names across testX/ansX.R files or they will clash and cause one of the tests to fail.</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">tests/test1.R</span></code>
+I will only go over one test for brevity but consult the tests folder of any question in the PL-CEE202 question bank for more examples of tests. I will highlight three important notes</p>
+<ol class="simple">
+<li><p>All of the student’s code from the notebook gets written to <code class="docutils literal notranslate"><span class="pre">/grade/student/stcode.R</span></code> so be sure to source from that location.</p></li>
+<li><p>Be sure to add #grade tags to all essential cells so that all the important supporting data is written to <code class="docutils literal notranslate"><span class="pre">grade/student/stcode.R</span></code>.</p></li>
+<li><p>Use unique variable names across tests or they will clash. A common approach is “pX_variable”.</p></li>
+</ol>
+<p>You test code by sourcing the student’s value for a variable and then sourcing the correct value from the <code class="docutils literal notranslate"><span class="pre">ansX.R</span></code> file. You can compare them using expect_equivalent_with_diff() as shown below.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">Sys.chmod</span><span class="p">(</span><span class="s">&quot;/grade/student/stcode.R&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&quot;0664&quot;</span><span class="p">)</span>
+<span class="n">student_p1_t0</span> <span class="o">&lt;-</span> <span class="n">unix</span><span class="o">::</span><span class="nf">eval_safe</span><span class="p">({</span><span class="nf">source</span><span class="p">(</span><span class="s">&quot;/grade/student/stcode.R&quot;</span><span class="p">);</span> <span class="n">p1_t0</span><span class="p">},</span> <span class="n">uid</span><span class="o">=</span><span class="m">1001</span><span class="p">)</span>
+<span class="n">student_p1_ta</span> <span class="o">&lt;-</span> <span class="n">unix</span><span class="o">::</span><span class="nf">eval_safe</span><span class="p">({</span><span class="nf">source</span><span class="p">(</span><span class="s">&quot;/grade/student/stcode.R&quot;</span><span class="p">);</span> <span class="n">p1_ta</span><span class="p">},</span> <span class="n">uid</span><span class="o">=</span><span class="m">1001</span><span class="p">)</span>
+<span class="n">student_p1_pvalue</span> <span class="o">&lt;-</span> <span class="n">unix</span><span class="o">::</span><span class="nf">eval_safe</span><span class="p">({</span><span class="nf">source</span><span class="p">(</span><span class="s">&quot;/grade/student/stcode.R&quot;</span><span class="p">);</span> <span class="n">p1_pvalue</span><span class="p">},</span> <span class="n">uid</span><span class="o">=</span><span class="m">1001</span><span class="p">)</span>
+
+<span class="nf">source</span><span class="p">(</span><span class="s">&quot;/grade/tests/ans1.R&quot;</span><span class="p">)</span>
+<span class="n">correct_p1_t0</span> <span class="o">&lt;-</span> <span class="n">p1_t0</span>
+<span class="n">correct_p1_ta</span> <span class="o">&lt;-</span> <span class="n">p1_ta</span>
+<span class="n">correct_p1_pvalue</span> <span class="o">&lt;-</span> <span class="n">p1_pvalue</span>
+
+<span class="nf">using</span><span class="p">(</span><span class="n">ttdo</span><span class="p">)</span>
+<span class="nf">expect_equivalent_with_diff</span><span class="p">(</span><span class="n">student_p1_t0</span><span class="p">,</span> <span class="n">correct_p1_t0</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&quot;unified&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&quot;ansi256&quot;</span><span class="p">)</span>
+<span class="nf">expect_equivalent_with_diff</span><span class="p">(</span><span class="n">student_p1_ta</span><span class="p">,</span> <span class="n">correct_p1_ta</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&quot;unified&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&quot;ansi256&quot;</span><span class="p">)</span>
+<span class="nf">expect_equivalent_with_diff</span><span class="p">(</span><span class="n">student_p1_pvalue</span><span class="p">,</span> <span class="n">correct_p1_pvalue</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&quot;unified&quot;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&quot;ansi256&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="subdirectory-workspace">
+<h2>Subdirectory <code class="docutils literal notranslate"><span class="pre">workspace</span></code><a class="headerlink" href="#subdirectory-workspace" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Workbook.ipynb</span></code></p>
+<p>It is imperative that the notebook be named “Workbook.ipynb” or the autograder will not pick it up. Typically, notebooks are designed as lesson plans. To grade a cell in the notebook, simply add</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#grade</span>
+</pre></div>
+</div>
+<p>to the top of the cell. Note: if a problem uses variables across multiple cells, then you need #grade tags in all those cells.</p>
+</section>
+</section>
+<section id="testing-gradability-of-your-r-notebook">
+<h1>Testing gradability of your R Notebook<a class="headerlink" href="#testing-gradability-of-your-r-notebook" title="Permalink to this headline"></a></h1>
+<p>The intial set up is the hardest/longest part. After that, developing in a local PL env is very easy.</p>
+<section id="setting-up-local-development-environment">
+<h2>Setting up local development environment<a class="headerlink" href="#setting-up-local-development-environment" title="Permalink to this headline"></a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://docs.docker.com/get-docker/">Install docker</a></p></li>
+<li><p><a class="reference external" href="https://github.com/PrairieLearn/pl-cee202">Clone the PL CEE Repo</a>
+Now you should be able to launch a local PL instance by running</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./runMe.sh
+</pre></div>
+</div>
+</section>
+<section id="adding-notebook-to-course-directory">
+<h2>Adding notebook to course directory<a class="headerlink" href="#adding-notebook-to-course-directory" title="Permalink to this headline"></a></h2>
+<p>Create a new folder in <code class="docutils literal notranslate"><span class="pre">questions/</span></code> for your worksheet and fill out all the relevant content descirbed above. Then you can navigate to <a class="reference external" href="http://localhost:3000/">http://localhost:3000/</a> to view your question.</p>
+<p>You should also create a copy of the folder and add <code class="docutils literal notranslate"><span class="pre">_filled</span></code> to the end of the folder name. This is where you safely store your filled notebook without risk of leaking it to students. <strong>Make sure to change the uuid in the <code class="docutils literal notranslate"><span class="pre">info.json</span></code> or it will clash with the original problem in PL.</strong></p>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline"></a></h2>
+<p>It’s important to test that each individual question grades since students will work incrementally. Launch the question and replace each cell block with the filled cell block and grade to ensure the question is being graded properly.</p>
+</section>
+<section id="deploying-to-live-pl">
+<h2>Deploying to live PL<a class="headerlink" href="#deploying-to-live-pl" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="final-thoughts">
+<h1>Final Thoughts<a class="headerlink" href="#final-thoughts" title="Permalink to this headline"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">questions/WS13_Central_Limit_Theorem</span></code> is a great example question to reference.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, Zhonghua Zheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
